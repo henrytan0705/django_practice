@@ -19,7 +19,13 @@
     <title>Django Practice</title>
   </head>
   <body>
-    {% block content %} {% endblock %}
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">Django Practice</a>
+    </nav>
+
+    <main class="container">
+      {% block content %} {% endblock %}
+    </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
