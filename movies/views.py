@@ -7,6 +7,7 @@ from .models import Movie
 
 def index(request):
     movies = Movie.objects.all()
-    output = ', '.join([m.title for m in movies])
+    # output = ', '.join([m.title for m in movies])
 
-    return HttpResponse(output)
+    return render(request, 'movies/index.html', {'movies': movies})
+    # return HttpResponse(output)
