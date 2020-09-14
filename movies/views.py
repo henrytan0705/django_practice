@@ -11,3 +11,7 @@ def index(request):
 
     return render(request, 'movies/index.html', {'movies': movies})
     # return HttpResponse(output)
+
+
+def detail(request, movie_id):
+    return HttpResponse(movie_id)
