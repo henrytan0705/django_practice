@@ -1,10 +1,11 @@
-from movies.models import Movie
 from rest_framework import viewsets, permissions
+from movies.models import Movie
 from .serializers import MovieSerializer
 
 
 class MovieViewSet(viewsets.ModelViewSet):
-    querySet = Movie.objects.all()
+    queryset = Movie.objects.all()
+
     permission_classes = [
         permissions.AllowAny
     ]
