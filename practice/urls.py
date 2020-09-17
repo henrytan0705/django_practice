@@ -21,7 +21,7 @@ from . import views
 # movie_resource = MovieResource()
 
 urlpatterns = [
-    # path('', include('frontend.urls')),
+    path('', include('frontend.urls')),
     path('', include('movies.urls')),
     # path('', views.home),
     path('admin/', admin.site.urls),
