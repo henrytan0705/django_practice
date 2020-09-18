@@ -7,31 +7,52 @@ export class Form extends Component {
     password: ""
   };
 
+  onChange = e => this.setState({ [e.target.username]: e.target.value });
+
+  onSubmit = e => {
+    e.preventDefault();
+    console.log("submit");
+  };
+
   render() {
+    const { username, email, password } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
-        <h1>Login</h1>
-        <form>
+        <h2>Login</h2>
+        <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <input
-              type="email"
               className="form-control"
-              aria-describedby="emailHelp"
+              type="text"
+              name="name"
+              onChange={this.onChange}
+              value={username}
               placeholder="Username/Email"
             />
           </div>
 
           <div className="form-group">
             <input
-              type="password"
               className="form-control"
+              type="password"
+              name="password"
+              onChange={this.onChange}
+              value={password}
               placeholder="Password"
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
-            Create Account
-          </button>
+          <div className="form-group">
+            <button type="submit" className="btn btn-primary">
+              Create Account
+            </button>
+          </div>
+
+          <div>
+            <p>
+              Not a verified vendor? <a href="">Sign up</a>
+            </p>
+          </div>
         </form>
       </div>
     );
