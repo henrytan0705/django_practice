@@ -16,12 +16,20 @@ export class Movie extends Component {
     return (
       <Fragment>
         <h1>Movies Available</h1>
+        <table>
+          <thead></thead>
 
-        {this.props.movies.map(movie => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-
-        <h1>Footer</h1>
+          <tbody>
+            {this.props.movies.map(movie => (
+              <tr key={movie.id}>
+                <td>{movie.id}</td>
+                <td>{movie.title}</td>
+                <td>{movie.stock}</td>
+                <button>Button</button>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </Fragment>
     );
   }
