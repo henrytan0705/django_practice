@@ -23,8 +23,6 @@ from . import views
 urlpatterns = [
     path('', include('frontend.urls')),
     path('', include('movies.urls')),
-    # path('', views.home),
+    path('', include('users.urls')),
     path('admin/', admin.site.urls),
-    # path('movies/', include('movies.urls')),
-    # path('api/', include(movie_resource.urls))
 ]
