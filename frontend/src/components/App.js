@@ -43,8 +43,8 @@ class App extends Component {
 
               <div className="container">
                 <Switch>
-                  {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
-                  <Route exact path="/" component={Dashboard} />
+                  <PrivateRoute exact path="/" component={Dashboard} />
+                  {/* <Route exact path="/" component={Dashboard} /> */}
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                 </Switch>
