@@ -1,9 +1,18 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import { withAlert } from "react-alert";
+import { connect } from "react-redux";
 
 export class Alerts extends Component {
-  componentDidMount() {
-    this.props.alert.show("It works");
+  static propTypes = {
+    error: PropTypes.object.isRequired
+  };
+
+  componentDidUpdate(prevProps) {
+    const { error, alert } = this.props;
+
+    if (error != prevProps.error) {
+    }
   }
 
   render() {
@@ -11,4 +20,8 @@ export class Alerts extends Component {
   }
 }
 
-export default withAlert()(Alerts);
+const msp = state => ({
+  error: state.errors
+});
+
+export default connect(msp)(withAlert()(Alerts));

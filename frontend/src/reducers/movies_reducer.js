@@ -5,8 +5,6 @@ const initialState = {
 };
 
 const moviesReducer = (state = initialState, action) => {
-  Object.freeze(initialState);
-
   switch (action.type) {
     case GET_MOVIES:
       return {

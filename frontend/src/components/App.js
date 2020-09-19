@@ -17,7 +17,8 @@ import Header from "./layouts/Header";
 import Alerts from "./layouts/Alerts";
 import Login from "./form/Login";
 import Register from "./form/Register";
-// import Movie from "./movie/Movie";
+import PrivateRoute from "./route/PrivateRoute";
+import Movie from "./movie/Movie";
 
 //Alert Options
 const alertOptions = {
@@ -37,6 +38,7 @@ class App extends Component {
 
               <div className="container">
                 <Switch>
+                  <PrivateRoute exact path="/" component={Movie} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                 </Switch>
