@@ -18,7 +18,8 @@ import Alerts from "./layouts/Alerts";
 import Login from "./form/Login";
 import Register from "./form/Register";
 import PrivateRoute from "./route/PrivateRoute";
-import Movie from "./movie/Movie";
+import Dashboard from "./movies/Dashboard";
+import { loadUser } from "../actions/auth_actions";
 
 //Alert Options
 const alertOptions = {
@@ -27,6 +28,10 @@ const alertOptions = {
 };
 
 class App extends Component {
+  componentDidMount() {
+    store.dispatch(loadUser());
+  }
+
   render() {
     return (
       <Provider store={store}>
@@ -38,7 +43,8 @@ class App extends Component {
 
               <div className="container">
                 <Switch>
-                  <PrivateRoute exact path="/" component={Movie} />
+                  {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
+                  <Route exact path="/" component={Dashboard} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                 </Switch>
