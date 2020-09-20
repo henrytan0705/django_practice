@@ -90,3 +90,7 @@ export const register = (username, email, password) => dispatch => {
     });
   });
 };
+
+// Logout User
+
+export const logout = () => dispatch => {};
