@@ -15,23 +15,23 @@ export class Movies extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Movies Available</h1>
-        <table>
-          <thead></thead>
-          <tbody>
+        <h2>Movies</h2>
+        <table className="table table-striped">
+          <thead>
             <tr>
-              <td>Title</td>
-              <td> </td>
-              <td>Year</td>
-              <td>Stock</td>
-              <td>Price</td>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Year</th>
+              <th>Price</th>
+              <th />
             </tr>
+          </thead>
+          <tbody>
             {this.props.movies.map(movie => (
               <tr key={movie.id}>
+                <td>{movie.id}</td>
                 <td>{movie.title}</td>
-                <td> - </td>
                 <td>{movie.release_year}</td>
-                <td>{movie.number_in_stock}</td>
                 <td>{movie.daily_rate}</td>
               </tr>
             ))}

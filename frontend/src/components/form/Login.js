@@ -75,6 +75,7 @@ export class Login extends Component {
               </button>
             </div>
             <p>
+              {" "}
               Not a verified vendor? <Link to="/register">Signup</Link>
             </p>
           </form>

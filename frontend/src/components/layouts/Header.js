@@ -1,7 +1,13 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+// import { logout } from "../../actions/auth_actions";
+// import { connect } from "react-redux";
 
 export class Header extends Component {
+  // static propTypes = {
+  //   logout: PropTypes.func.isRequired
+  // };
+
   render() {
     return (
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
@@ -40,5 +46,14 @@ export class Header extends Component {
     );
   }
 }
+
+// const msp = state => ({
+//   loggedIn: state.isAuthenticated
+// });
+
+// export default connect(
+//   msp,
+//   { logout }
+// )(Header);
 
 export default Header;
