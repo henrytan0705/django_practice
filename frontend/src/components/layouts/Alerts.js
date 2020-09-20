@@ -19,11 +19,12 @@ export class Alerts extends Component {
         alert.error(`Year: ${error.message.release_year.join()}`);
       if (error.message.genre)
         alert.error(`Genre: ${error.message.genre.join()}`);
-      if (error.message.non_field_errors)
-        alert.error(error.message.non_field_errors.join());
-      if (error.message.price) alert.error(error.message.price.join());
+      if (error.message.daily_rate)
+        alert.error(`Price: ${error.message.daily_rate.join()}`);
       if (error.message.number_in_stock)
-        alert.error(error.message.number_in_stock.join());
+        alert.error(`Stock: ${error.message.number_in_stock.join()}`);
+      // if (error.message.non_field_errors)
+      //   alert.error(error.message.non_field_errors.join());
     }
 
     if (message !== prevProps.message) {

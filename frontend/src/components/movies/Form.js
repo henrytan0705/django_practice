@@ -16,23 +16,41 @@ export class Form extends Component {
     addMovie: PropTypes.func.isRequired
   };
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  onChange = e => {
+    const field = e.target.name;
+    const keys = ["year", "price", "stock", "genre"];
+
+    if (keys.includes(field)) {
+      console.log(`${field} - value Converted to number`);
+      this.setState({ [e.target.name]: Number(e.target.value) });
+    } else {
+      this.setState({ [e.target.name]: e.target.value });
+    }
+  };
 
   onSubmit = e => {
     e.preventDefault();
     const { title, year, genre, price, stock } = this.state;
-    const movie = { title, year, genre, price, stock };
+    const movie = {
+      title,
+      release_year: year,
+      genre,
+      daily_rate: price,
+      number_in_stock: stock
+    };
     this.props.addMovie(movie);
     this.setState({
       title: "",
       year: "",
       genre: "",
-      price: ""
+      price: "",
+      stock: ""
     });
   };
 
   render() {
     const { title, year, price, genre, stock } = this.state;
+
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add Movie</h2>
@@ -59,13 +77,19 @@ export class Form extends Component {
           </div>
           <div className="form-group">
             <label>Genre</label>
-            <input
+            <select
               className="form-control"
-              type="text"
               name="genre"
               onChange={this.onChange}
               value={genre}
-            />
+            >
+              <option value="" disabled>
+                Select a genre
+              </option>
+              <option value="1">Action</option>
+              <option value="2">Drama</option>
+              <option value="3">Horror</option>
+            </select>
           </div>
           <div className="form-group">
             <label>Price</label>

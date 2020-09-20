@@ -20,11 +20,11 @@ export const getMovies = () => (dispatch, getState) => {
     );
 };
 
-export const addMovie = lead => (dispatch, getState) => {
+export const addMovie = movie => (dispatch, getState) => {
   axios
     .post(
       "/api/movies/",
-      lead
+      movie
       // tokenConfig(getState)
     )
     .then(res => {
