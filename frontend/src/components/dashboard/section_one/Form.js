@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addMovie } from "../../actions/movies_actions";
+import { addMovie } from "../../../actions/movies_actions";
 
 export class Form extends Component {
   state = {

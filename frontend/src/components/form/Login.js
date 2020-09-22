@@ -48,7 +48,7 @@ export class Login extends Component {
                 value={username}
               />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>Email</label>
               <input
                 type="email"
@@ -57,7 +57,7 @@ export class Login extends Component {
                 onChange={this.onChange}
                 value={email}
               />
-            </div>
+            </div> */}
             <div className="form-group">
               <label>Password</label>
               <input

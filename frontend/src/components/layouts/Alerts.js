@@ -11,7 +11,6 @@ export class Alerts extends Component {
 
   componentDidUpdate(prevProps) {
     const { error, alert, message } = this.props;
-
     if (error !== prevProps.error) {
       if (error.message.title)
         alert.error(`Title: ${error.message.title.join()}`);
@@ -23,13 +22,12 @@ export class Alerts extends Component {
         alert.error(`Price: ${error.message.daily_rate.join()}`);
       if (error.message.number_in_stock)
         alert.error(`Stock: ${error.message.number_in_stock.join()}`);
-      // if (error.message.non_field_errors)
-      //   alert.error(error.message.non_field_errors.join());
+      if (error.message.non_field_errors)
+        alert.error(error.message.non_field_errors.join());
     }
 
     if (message !== prevProps.message) {
       if (message.addMovie) alert.success(message.addMovie);
-      if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
     }
   }
 
